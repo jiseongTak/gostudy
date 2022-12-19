@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+func ChangeArray(arr [5]int) {
+	arr[3] = 3000
+}
+
 // 배열 복사
 func main() {
 	a := [5]int{1, 2, 3, 4, 5}
@@ -22,6 +26,12 @@ func main() {
 	for i, v := range b {
 		fmt.Printf("b[%d] = %d\n", i, v)
 	}
+	fmt.Println()
+
+	ChangeArray(a)
+	fmt.Println(a[3])
+	//ChangeArray 함수의 인수로 a값이 복사되기 때문에 arr와 a는
+	//서로 다른 메모리 주소를 가진 다른 배열
 
 	//Go 언어에서 대입 연산자는 우변의 값을 좌변의 메모리 공간에 복사
 	//이때 복사되는 크기는 타입 크기와 같습니다.
